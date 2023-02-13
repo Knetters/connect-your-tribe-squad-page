@@ -5,44 +5,67 @@ body, html {
     padding: 0;
     font-size: 16px;
     font-family: "Epilogue", Arial, Helvetica, sans-serif;
+    width: 80%;
+    margin-left: 10%;
+    background-color: black;
 }
 
+/* Typographie */
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+}
+
+.yellow {
+    background-color: red;
+    background-image: linear-gradient(45deg, #78f388, #3fb783);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+/* Heading styling */
 .heading {
-    text-align: center;
-    padding: 2rem;
+    padding: 3rem 1rem 3rem 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    background: rgb(255,255,255);
+    background: linear-gradient(41deg, rgba(255,255,255,0) 0%, rgba(56,49,198,1) 0%, rgba(101,98,208,1) 100%);
 }
 
-.heading img {
-    border-radius: 50%;
-    width: 6rem;
-}
-
-.card-header {
-    width: 100%;
-    text-align: center;
-    margin-top: -2rem;
-}
-
-.student-img {
-    border-radius: 50%;
-    width: 6rem;
+/* Filterbar styling */
+.filer-bar {
+    padding: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .3rem;
+    border-radius: 1rem;
+    background: rgb(255,255,255);
+    background: linear-gradient(41deg, rgba(255,255,255,0) 0%, rgba(135,170,242,1) 0%, rgba(101,98,208,1) 100%);
 }
 
 .squadBTN {
-    padding: 1rem;
-    width: 10rem;
-    margin: 0;
-    background-color: #e9fcf7;
-    border: 1px solid #6ce8cc;
-    border-radius: 5px;
-    font-size: 1rem;
+    padding: .8rem;
+    border-radius: .5rem;
+    border: 2px solid #232BBA;
+    background-color: transparent;
+    transition: .2s;
+    color: #1c206f;
     font-weight: 600;
 }
 
+.squadBTN:hover {
+    background-color: #0f1bf92a;
+    border: 2px solid #3d15b5;
+    cursor: pointer;
+}
+
+/* User profile output area styling */
 .profile-grid {
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 5rem;
+    margin-bottom: 6rem;
 }
 
 .container {
@@ -52,9 +75,51 @@ body, html {
     position: relative;
 }
 
-.item {
-    background: blue;
+.card-item {
+    background: rgb(255,255,255);
+    background: linear-gradient(41deg, rgba(255,255,255,0) 0%, rgba(135,209,242,1) 0%, rgba(212,211,247,1) 100%);
+    border-radius: 1rem;
     margin: 4px;
     flex: 0 1 calc(20% - 8px); /* <-- adjusting for margin */
     height: 400px;
+}
+
+.card-item:hover {
+    cursor: pointer;
+}
+
+.inner-card {
+    padding: 1rem;
+}
+
+/* Tablet view */
+@media only screen and (max-width: 1400px) {
+    
+    /* Student cards */
+    .card-item {
+        flex: 0 1 calc(33% - 8px); /* <-- adjusting for margin */
+    }
+
+    /* Typographie */
+    h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Mobile view */
+@media only screen and (max-width: 900px) {
+
+    /* Student cards */
+    .card-item {
+        flex: 0 1 calc(50% - 8px); /* <-- adjusting for margin */
+    }
+
+    /* Typographie */
+    h1 {
+        font-size: 3rem;
+        margin: 0;
+        padding: 0;
+    }
 }
