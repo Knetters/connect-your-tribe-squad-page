@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Epilogue", Arial, Helvetica, sans-serif;
+}
+
+.heading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.heading img {
+    border-radius: 50%;
+    width: 6rem;
+}
+
+.card-header {
+    width: 100%;
+    text-align: center;
+    margin-top: -2rem;
+}
+
+.student-img {
+    border-radius: 50%;
+    width: 6rem;
+}
+
+.squadBTN {
+    padding: 1rem;
+    width: 10rem;
+    margin: 0;
+    background-color: #e9fcf7;
+    border: 1px solid #6ce8cc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.profile-grid {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5rem;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+}
+
+.item {
+    background: blue;
+    margin: 4px;
+    flex: 0 1 calc(20% - 8px); /* <-- adjusting for margin */
+    height: 400px;
+}
