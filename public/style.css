@@ -5,14 +5,14 @@ body, html {
     padding: 0;
     font-size: 16px;
     font-family: "Epilogue", Arial, Helvetica, sans-serif;
-    width: 80%;
-    margin-left: 10%;
+    width: 86%;
+    margin-left: 7%;
     background-color: black;
 }
 
 /* Typographie */
 h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin: 0;
     padding: 0;
 }
