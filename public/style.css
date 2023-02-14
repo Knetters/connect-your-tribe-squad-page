@@ -75,13 +75,14 @@ h1 {
     position: relative;
 }
 
+/* User profile cards styling */
 .card-item {
     background: rgb(255,255,255);
     background: linear-gradient(41deg, rgba(255,255,255,0) 0%, rgba(135,209,242,1) 0%, rgba(212,211,247,1) 100%);
     border-radius: 1rem;
     margin: 4px;
     flex: 0 1 calc(20% - 8px); /* <-- adjusting for margin */
-    height: 400px;
+    width: calc(20% - 8px);
 }
 
 .card-item:hover {
@@ -90,6 +91,35 @@ h1 {
 
 .inner-card {
     padding: 1rem;
+    text-align: center;
+}
+
+.card-img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-name {
+    font-weight: 600;
+}
+
+.card-github {
+    color: #413e5b;
+    width: 100%;
+}
+
+.card-button {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+}
+
+.card-button:hover {
+    cursor: pointer;
 }
 
 /* Tablet view */
@@ -98,6 +128,7 @@ h1 {
     /* Student cards */
     .card-item {
         flex: 0 1 calc(33% - 8px); /* <-- adjusting for margin */
+        width: calc(33% - 8px);
     }
 
     /* Typographie */
@@ -114,6 +145,7 @@ h1 {
     /* Student cards */
     .card-item {
         flex: 0 1 calc(50% - 8px); /* <-- adjusting for margin */
+        width: calc(50% - 8px);
     }
 
     /* Typographie */
