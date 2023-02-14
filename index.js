@@ -1,31 +1,39 @@
-// Importeer express uit de node_modules map
+// Import the required modules
 import express from "express";
+import fetch from "node-fetch";
 
-// // Load the API data
+// Create a new Express app
+const app = express();
 
-console.log(data)
+// Set EJS as the template engine and specify the views directory
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
-// Maak een nieuwe express app aan
-const app = express()
+// Serve static files from the public directory
+app.use(express.static("public"));
 
-// Stel ejs in als template engine en geef de 'views' map door
-app.set('view engine', 'ejs')
-app.set('views', './views')
-
-// Gebruik de map 'public' voor statische resources
-app.use(express.static('public'))
-
-// Maak een route voor de index
+// Create a route for the index page
 app.get('/', function (req, res) {
-  // res.send('Hello World!')
-  res.render('index')
-})
+  let url = "https://whois.fdnd.nl/api/v1/squad/squad-a-2022"
 
-// Stel het poortnummer in waar express op gaat luisteren
-app.set('port', process.env.PORT || 8000)
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data && data.squad && data.squad.members) {
+        const members = data.squad.members;
+        res.render('index', { members });
+      } else {
+        res.render('index', { members: [] });
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      res.render('index', { members: [] });
+    });
+});
 
-// Start express op, haal het ingestelde poortnummer op
-app.listen(app.get('port'), function () {
-  // Toon een bericht in de console en geef het poortnummer door
-  console.log(`Application available on: http://localhost:${app.get('port')}`)
-})
+// Set the port number and start the server
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
+  console.log(`Application available on: http://localhost:${port}`);
+});

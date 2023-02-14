@@ -38,7 +38,7 @@ h1 {
 }
 
 /* Filterbar styling */
-.filer-bar {
+.filter-bar {
     padding: 1rem;
     margin-top: .5rem;
     margin-bottom: .3rem;
@@ -69,7 +69,8 @@ h1 {
 }
 
 .container {
-    width: 100%;
+    width: 100.7%;
+    margin-left: -.35%;
     display: flex;
     flex-flow: row wrap;
     position: relative;
@@ -80,25 +81,22 @@ h1 {
     background: rgb(255,255,255);
     background: linear-gradient(41deg, rgba(255,255,255,0) 0%, rgba(135,209,242,1) 0%, rgba(212,211,247,1) 100%);
     border-radius: 1rem;
-    margin: 4px;
-    flex: 0 1 calc(20% - 8px); /* <-- adjusting for margin */
-    width: calc(20% - 8px);
-}
-
-.card-item:hover {
-    cursor: pointer;
+    margin: .35%;
+    flex: 0 1 calc(20% - .7%); /* <-- adjusting for margin */
+    width: calc(20% - .7%);
 }
 
 .inner-card {
     padding: 1rem;
     text-align: center;
+    position: relative;
 }
 
 .card-img {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .card-name {
@@ -114,11 +112,28 @@ h1 {
     background-color: #000;
     color: #fff;
     padding: 0.5rem;
-    width: 10rem;
+    width: 8rem;
     border-radius: 0.5rem;
+    display: inline-block;
+    text-decoration: none;
+    font-size: .8rem;
 }
 
 .card-button:hover {
+    cursor: pointer;
+}
+
+.like-btn {
+    position: absolute;
+    top: .5rem;
+    right: .6rem;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    color: #e83c73;
+}
+
+.like-btn:hover {
     cursor: pointer;
 }
 
@@ -127,8 +142,9 @@ h1 {
     
     /* Student cards */
     .card-item {
-        flex: 0 1 calc(33% - 8px); /* <-- adjusting for margin */
-        width: calc(33% - 8px);
+        margin: .35%;
+        flex: 0 1 calc(33% - .7%); /* <-- adjusting for margin */
+        width: calc(33% - .7%);
     }
 
     /* Typographie */
@@ -144,8 +160,8 @@ h1 {
 
     /* Student cards */
     .card-item {
-        flex: 0 1 calc(50% - 8px); /* <-- adjusting for margin */
-        width: calc(50% - 8px);
+        flex: 0 1 calc(50% - .7%); /* <-- adjusting for margin */
+        width: calc(50% - .7%);
     }
 
     /* Typographie */

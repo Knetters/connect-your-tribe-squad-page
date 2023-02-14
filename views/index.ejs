@@ -4,15 +4,29 @@
     <section class="heading">
         <h1>Welkom bij het <span class="yellow">digitale</span> klassenboek van FDND leerjaar 2022/2023 <span aria-hidden>🏓</span></h1>
     </section>
-    <section class="filer-bar">
-        <button id="squadBTN-A" class="squadBTN">Squad A</button>
-        <button id="squadBTN-B" class="squadBTN">Squad B</button>
-        <button id="squadBTN-C" class="squadBTN">Squad C</button>
+    <section class="filter-bar">
+        <button id="squadBTN-A" class="squadBTN" data-squad="squad-a-2022">Squad A</button>
+        <button id="squadBTN-B" class="squadBTN" data-squad="squad-b-2022">Squad B</button>
+        <button id="squadBTN-C" class="squadBTN" data-squad="squat-c-2022">Squad C</button>
     </section>
 
     <section class="profile-grid">
         <div id="card-container" class="container">
-            <!-- Here the cards will load -->
+            <% members.forEach(function(member) { %>
+            <div class="card-item">
+                <div class="inner-card">
+                    <p class="like-btn"><i class="fa fa-heart"></i></p>
+                    <img class="card-img" src="<%= member.avatar %>" onerror="this.onerror=null;this.src='/static/img/fallback-pf.png';">
+                    <p class="card-name"><%= member.name %></p>
+                    <% if(member.gitHubHandle) { %>
+                        <p class="card-github"><%= member.gitHubHandle %></p>
+                    <% } else { %>
+                        <p>Niet ingevuld</p>
+                    <% } %>
+                    <a href="<%= "https://github.com/" + member.gitHubHandle %>" class="card-button">GitHub</a>
+                </div>
+            </div>
+            <% }) %>
         </div>
     </section>
 </main>
