@@ -131,11 +131,45 @@ h1 {
     font-size: 1.5rem;
     padding: 0;
     margin: 0;
-    color: #e83c73;
+    color: #787ed85f;
 }
 
 .like-btn:hover {
     cursor: pointer;
+}
+
+.like {
+    animation-name: like;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+    color: #e83c73;
+}
+
+@keyframes like {
+    0% {
+      transform: scale(1, 1) translateY(0);
+      color: #e83c73;
+    }
+    10% {
+      transform: scale(1, 0.8) translateY(0);
+      color: #e83c73;
+    }
+    30% {
+      transform: scale(1.2, 1.2) rotate(10deg);
+      color: #e83c73;
+    }
+    60% {
+      transform: scale(1.5, 1.5) rotate(-5deg);
+      color: #e83c73;
+    }
+    80% {
+      transform: scale(0.8, 1) translateY(0);
+      color: #e83c73;
+    }
+    100% {
+        transform: scale(1, 1) translateY(0);
+        color: #e83c73;
+    }
 }
 
 /* Tablet view */
