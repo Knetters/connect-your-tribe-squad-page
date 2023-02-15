@@ -5,9 +5,17 @@
         <h1>Welkom bij het <span class="yellow">digitale</span> klassenboek van FDND leerjaar 2022/2023 <span aria-hidden>🏓</span></h1>
     </section>
     <section class="filter-bar">
-        <a href="/?squad=squad-a-2022" class="squadBTN">Squad A</a>
-        <a href="/?squad=squad-b-2022" class="squadBTN">Squad B</a>
-        <a href="/?squad=squat-c-2022" class="squadBTN">Squad C</a>
+        <div class="inner-bar">
+            <div class="squad-select">
+                <a href="/?squad=squad-a-2022" class="filterBTN">Squad A</a>
+                <a href="/?squad=squad-b-2022" class="filterBTN">Squad B</a>
+                <a href="/?squad=squat-c-2022" class="filterBTN">Squad C</a>
+            </div>
+            <div class="filter-select">
+                <a href="/?orderBy=name&direction=ASC" class="filterBTN">Naam A-Z</a>
+                <a href="/?orderBy=name&direction=DEC" class="filterBTN">Naam Z-A</a>
+            </div>
+        </div>
     </section>
 
     <h2> <%= squad.name %> </h2>
@@ -18,7 +26,7 @@
             <div class="card-item">
                 <div class="inner-card">
                     <p class="like-btn"><i class="fa fa-heart"></i></p>
-                    <img class="card-img" src="<%= member.avatar %>" onerror="this.onerror=null;this.src='/static/img/fallback-pf.png';">
+                    <img class="card-img" src="<%= member.avatar %>" alt="Profiel foto van <%= member.name %>" onerror="this.onerror=null;this.src='/static/img/fallback-pf.png';">
                     <h3 class="card-name"><%= member.name %> <%= member.prefix %> <%= member.surname %></h3>
                     <% if(member.gitHubHandle) { %>
                         <p class="card-github"><%= member.gitHubHandle %></p>
