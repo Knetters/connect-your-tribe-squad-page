@@ -5,19 +5,21 @@
         <h1>Welkom bij het <span class="yellow">digitale</span> klassenboek van FDND leerjaar 2022/2023 <span aria-hidden>🏓</span></h1>
     </section>
     <section class="filter-bar">
-        <button id="squadBTN-A" class="squadBTN" data-squad="squad-a-2022">Squad A</button>
-        <button id="squadBTN-B" class="squadBTN" data-squad="squad-b-2022">Squad B</button>
-        <button id="squadBTN-C" class="squadBTN" data-squad="squat-c-2022">Squad C</button>
+        <a href="/?squad=squad-a-2022" class="squadBTN">Squad A</a>
+        <a href="/?squad=squad-b-2022" class="squadBTN">Squad B</a>
+        <a href="/?squad=squat-c-2022" class="squadBTN">Squad C</a>
     </section>
+
+    <h2> <%= squad.name %> </h2>
 
     <section class="profile-grid">
         <div id="card-container" class="container">
-            <% members.forEach(function(member) { %>
+            <% squad.members.forEach(member => { %>
             <div class="card-item">
                 <div class="inner-card">
                     <p class="like-btn"><i class="fa fa-heart"></i></p>
                     <img class="card-img" src="<%= member.avatar %>" onerror="this.onerror=null;this.src='/static/img/fallback-pf.png';">
-                    <p class="card-name"><%= member.name %></p>
+                    <h3 class="card-name"><%= member.name %> <%= member.prefix %> <%= member.surname %></h3>
                     <% if(member.gitHubHandle) { %>
                         <p class="card-github"><%= member.gitHubHandle %></p>
                     <% } else { %>

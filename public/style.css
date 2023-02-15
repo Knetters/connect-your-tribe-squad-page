@@ -17,6 +17,19 @@ h1 {
     padding: 0;
 }
 
+h2 {
+    font-size: 2rem;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 0;
+    color: white;
+}
+
+h3 {
+    font-size: 1rem;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+
 .yellow {
     background-color: red;
     background-image: linear-gradient(45deg, #78f388, #3fb783);
@@ -39,7 +52,7 @@ h1 {
 
 /* Filterbar styling */
 .filter-bar {
-    padding: 1rem;
+    padding: 1.5rem;
     margin-top: .5rem;
     margin-bottom: .3rem;
     border-radius: 1rem;
@@ -55,6 +68,8 @@ h1 {
     transition: .2s;
     color: #1c206f;
     font-weight: 600;
+    text-decoration: none;
+    font-size: .8rem;
 }
 
 .squadBTN:hover {

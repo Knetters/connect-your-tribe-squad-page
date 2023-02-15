@@ -5,6 +5,11 @@ import fetch from "node-fetch";
 // Create a new Express app
 const app = express();
 
+const url = 'https://whois.fdnd.nl/api/v1/squad/squad-a-2022?orderBy=name&direction=ASC'
+const data = await fetch(url)
+  .then((response) => response.json())
+  .catch((error) => error)
+
 // Set EJS as the template engine and specify the views directory
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -13,23 +18,10 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 // Create a route for the index page
-app.get('/', function (req, res) {
-  let url = "https://whois.fdnd.nl/api/v1/squad/squad-a-2022"
+app.get('/', function (request, response) {
+  console.log(request.query.squad)
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      if (data && data.squad && data.squad.members) {
-        const members = data.squad.members;
-        res.render('index', { members });
-      } else {
-        res.render('index', { members: [] });
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      res.render('index', { members: [] });
-    });
+  response.render('index', data)
 });
 
 // Set the port number and start the server
