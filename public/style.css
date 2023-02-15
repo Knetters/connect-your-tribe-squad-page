@@ -94,8 +94,8 @@ h1 {
 }
 
 .card-img {
-    width: 70%;
-    height: 70%;
+    width: 8rem;
+    height: 8rem;
     object-fit: cover;
     border-radius: 50%;
 }
