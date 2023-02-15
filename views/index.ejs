@@ -12,8 +12,9 @@
                 <a href="/?squad=squat-c-2022" class="filterBTN">Squad C</a>
             </div>
             <div class="filter-select">
-                <a href="/?orderBy=name&direction=ASC" class="filterBTN">Naam A-Z</a>
-                <a href="/?orderBy=name&direction=DEC" class="filterBTN">Naam Z-A</a>
+                <a href="/?squad=<%= squad.slug %>&orderBy=name" class="filterBTN">Voornaam</a>
+                <a href="/?squad=<%= squad.slug %>&orderBy=surname" class="filterBTN">Achternaam</a>
+                <a href="/?squad=<%= squad.slug %>&orderBy=gitHubHandle" class="filterBTN">GitHub naam</a>
             </div>
         </div>
     </section>
