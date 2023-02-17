@@ -16,7 +16,6 @@ app.use(express.static("public"));
 
 // Create a route for the index page
 app.get('/', function (request, response) {
-  console.log(request.query.squad)
 
   let slug = request.query.squad || 'squad-a-2022'
   let orderBy = request.query.orderBy || 'name' + '&direction=ASC'
@@ -33,11 +32,6 @@ app.listen(port, () => {
   console.log(`Application available on: http://localhost:${port}`);
 });
 
-/**
- * Wraps the fetch api and returns the response body parsed through json
- * @param {*} url the api endpoint to address
- * @returns the json response from the api endpoint
- */
 async function fetchJson(url) {
   return await fetch(url)
     .then((response) => response.json())

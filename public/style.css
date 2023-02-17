@@ -122,6 +122,11 @@ h3 {
     padding: 1rem;
     text-align: center;
     position: relative;
+    transition: .2s;
+}
+
+.inner-card:hover {
+    padding: .5rem;
 }
 
 .card-img {
