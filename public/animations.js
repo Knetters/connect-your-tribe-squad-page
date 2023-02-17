@@ -4,7 +4,7 @@ gsap.from(".card-item", {
   y: 40,
   ease: "power1.inOut",
   stagger: {
-    grid: [5,23],
+    // grid: [5,23],
     from: "start",
     amount: 1.5
   }
