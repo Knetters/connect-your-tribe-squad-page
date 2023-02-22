@@ -2,7 +2,7 @@
 
 <main>
     <section class="heading">
-        <h1>Welkom bij het <span class="yellow">digitale</span> klassenboek van FDND leerjaar 2022/2023 <span aria-hidden>🏓</span></h1>
+        <h1>Welkom bij het <span class="yellow">digitale</span> klassenboek van <span class="red">FDND</span> leerjaar 2022/2023 <span aria-hidden>🏓</span></h1>
     </section>
     <section class="filter-bar">
         <div class="inner-bar">
@@ -21,20 +21,28 @@
 
     <h2> <%= squad.name %> </h2>
 
+    <%# Hier worden alle kaartjes ingeladen %>
     <section class="profile-grid">
         <div id="card-container" class="container">
+            <%# Hier worden alle %>
             <% squad.members.forEach(member => { %>
             <div class="card-item">
                 <div class="inner-card">
-                    <p class="like-btn"><i class="fa fa-heart"></i></p>
-                    <img class="card-img" src="<%= member.avatar %>" alt="Profiel foto van <%= member.name %>" onerror="this.onerror=null;this.src='/static/img/fallback-pf.png';">
+                    <form action="/" method="post">
+                        <input type="hidden" name="id" id="id" value="<%= member.id %>" />
+                        <input onChange="this.form.submit()" name="like" id="like" type="checkbox">
+                        <label for="like">
+                            <p class="like-btn"><i class="fa fa-heart"></i></p>
+                        </label>
+                    </form>
+                    <a href="<%= "https://github.com/" + member.gitHubHandle %>" target="_blank"><img class="card-img" src="<%= member.avatar %>" alt="Profiel foto van <%= member.name %>" onerror="this.onerror=null;this.src='/static/img/fallback-pf.png';"></a>
                     <h3 class="card-name"><%= member.name %> <%= member.prefix %> <%= member.surname %></h3>
                     <% if(member.gitHubHandle) { %>
                         <p class="card-github"><%= member.gitHubHandle %></p>
                     <% } else { %>
                         <p>Niet ingevuld</p>
                     <% } %>
-                    <a href="<%= "https://github.com/" + member.gitHubHandle %>" target="_blank" class="card-button">GitHub</a>
+                    <a href="<%= member.website %>" target="_blank" class="card-button">Website</a>
                 </div>
             </div>
             <% }) %>
