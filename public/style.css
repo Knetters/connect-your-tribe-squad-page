@@ -137,7 +137,8 @@ h3 {
 }
 
 .inner-card:hover {
-    padding: .5rem;
+    border-radius: 1rem;
+    background-color: #a4a8e9;
 }
 
 .card-img {
