@@ -19,41 +19,44 @@
         </div>
     </section>
 
-    <h2> <%= squad.name %> </h2>
+    <section class="title-section">
+       <h2> <%= squad.name %> </h2>
+       <button id="submit-btn" class="form-submit-btn" type="button" style="display:none;" onclick="document.getElementById('likeUser').submit()">Opslaan</button>
+    </section>
+    
 
     <%# Hier worden alle kaartjes ingeladen %>
     <section class="profile-grid">
         <div id="card-container" class="container">
             <%# Hier worden alle members geloopd %>
             <% squad.members.forEach(member => { %>
-
-            <%# Dit is een kaartje %>
-            <div class="card-item">
-                <div class="inner-card">
-
+                <%# Dit is een kaartje %>
+                <div class="card-item">
+                  <div class="inner-card">
+              
                     <%# Dit is het hartje dat zich gedraagd als checkbox %>
-                    <form action="/" method="post">
-                        <input type="hidden" name="id" id="id" value="<%= member.id %>" />
-                        <input name="like" id="like" type="checkbox">
-                        <label for="like">
-                            <p class="like-btn"><i class="fa fa-heart"></i></p>
-                        </label>
+                    <form action="/" method="post" id="likeUser">
+                      <input type="hidden" name="id" value="<%= member.id %>" />
+                      <input name="like_<%= member.id %>" id="like_<%= member.id %>" type="checkbox" <% if (member.liked) { %>checked<% } %>>
+                      <label for="like_<%= member.id %>">
+                        <p class="like-btn"><i class="fa fa-heart"></i></p>
+                      </label>
                     </form>
-
+              
                     <%# Informatie van de member %>
                     <a href="<%= "https://github.com/" + member.gitHubHandle %>" target="_blank"><img class="card-img" src="<%= member.avatar %>" alt="Profiel foto van <%= member.name %>" onerror="this.onerror=null;this.src='/static/img/fallback-pf.png';"></a>
                     <h3 class="card-name"><%= member.name %> <%= member.prefix %> <%= member.surname %></h3>
-
+              
                     <%# Wanneer iemand geen github heeft ingesteld komt er een %>
                     <% if(member.gitHubHandle) { %>
-                        <p class="card-github"><%= member.gitHubHandle %></p>
+                      <p class="card-github"><%= member.gitHubHandle %></p>
                     <% } else { %>
-                        <p>Niet ingevuld</p>
+                      <p>Niet ingevuld</p>
                     <% } %>
                     <a href="<%= member.website %>" target="_blank" class="card-button">Website</a>
+                  </div>
                 </div>
-            </div>
-            <% }) %>
+              <% }) %>
         </div>
     </section>
 </main>

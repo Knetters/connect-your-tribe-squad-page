@@ -12,3 +12,15 @@ likeBtns.forEach((btn, index) => {
     btn.classList.add(`animate-${index + 1}`);
   });
 });
+
+// Looks at the form and places the button when the user like someone
+const form = document.querySelector('form');
+const submitBtn = document.querySelector('#submit-btn');
+
+form.addEventListener('change', () => {
+  submitBtn.style.display = 'block';
+});
+
+function submitAllForms() {
+  $('form').submit();
+}

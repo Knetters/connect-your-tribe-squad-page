@@ -32,17 +32,17 @@ app.get('/', function (request, response) {
 app.post('/', function (request, response) {
   console.log(request.body)
   const payload = {
-    id: "",
-    like: ""
+    id: request.body.id,
+    like: request.body.like
   }
   const headers = {
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
-    method: 'POST',
-    body: JSON.stringify(request.body),
-  }
+    method: "POST",
+    body: JSON.stringify(payload),
+  };
   const url = 'https://whois.fdnd.nl/api/v1/shout'
 
   fetchJson(url, headers).then((data) => {
