@@ -1,7 +1,9 @@
 # Squad page
 Een website waar je de members van je squad kan zien.
 
-<img width="1440" alt="Screenshot 2023-02-22 at 12 47 02" src="https://user-images.githubusercontent.com/60781257/220611792-16856332-6e7f-4492-b900-9e9060d58c09.png">
+<img width='60%' src='https://user-images.githubusercontent.com/62908209/220888438-1baaf437-4342-43a8-870d-6f334083dc34.png'>
+
+
 
 ## Inhoudsopgave
 
