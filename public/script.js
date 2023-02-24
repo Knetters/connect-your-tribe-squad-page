@@ -21,6 +21,7 @@ form.addEventListener('change', () => {
   submitBtn.style.display = 'block';
 });
 
+// Work in progress form button
 function submitAllForms() {
   $('form').submit();
 }
