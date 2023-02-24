@@ -311,4 +311,8 @@ input {
         margin: .5rem;
         text-align: center;
     }
+
+    .filter-bar {
+        padding: .5rem;
+    }
 }
