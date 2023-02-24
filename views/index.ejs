@@ -25,16 +25,16 @@
     </section>
     
 
-    <%# Hier worden alle kaartjes ingeladen %>
+    <%# This is where all the cards will load in %>
     <section class="profile-grid">
         <div id="card-container" class="container">
-            <%# Hier worden alle members geloopd %>
+            <%# Make a loop for al the members %>
             <% squad.members.forEach(member => { %>
-                <%# Dit is een kaartje %>
+                <%# This is one card %>
                 <div class="card-item">
                   <div class="inner-card">
               
-                    <%# Dit is het hartje dat zich gedraagd als checkbox %>
+                    <%# This is the form that acts like a heard button %>
                     <form action="/" method="post" id="likeUser">
                       <input type="hidden" name="id" value="<%= member.id %>" />
                       <input name="like_<%= member.id %>" id="like_<%= member.id %>" type="checkbox" <% if (member.liked) { %>checked<% } %>>
@@ -43,11 +43,11 @@
                       </label>
                     </form>
               
-                    <%# Informatie van de member %>
+                    <%# Information about the members %>
                     <a href="<%= "https://github.com/" + member.gitHubHandle %>" target="_blank"><img class="card-img" src="<%= member.avatar %>" alt="Profiel foto van <%= member.name %>" onerror="this.onerror=null;this.src='/static/img/fallback-pf.png';"></a>
                     <h3 class="card-name"><%= member.name %> <%= member.prefix %> <%= member.surname %></h3>
               
-                    <%# Wanneer iemand geen github heeft ingesteld komt er een %>
+                    <%# When there is no GitHub name there will be a fall back %>
                     <% if(member.gitHubHandle) { %>
                       <p class="card-github"><%= member.gitHubHandle %></p>
                     <% } else { %>

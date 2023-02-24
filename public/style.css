@@ -293,6 +293,10 @@ input {
         padding: 0;
     }
 
+    .heading {
+        padding: 1rem;
+    }
+
     .card-img {
         width: 6rem;
         height: 6rem;
